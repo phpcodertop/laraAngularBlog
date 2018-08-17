@@ -14,4 +14,19 @@ class Comment extends Model
     protected $fillable = [
         'user_id', 'post_id', 'content'
     ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function post(){
+        return $this->belongsTo(Post::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function author(){
+        return $this->belongsTo(User::class);
+    }
+
 }

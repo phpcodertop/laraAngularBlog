@@ -14,4 +14,12 @@ class Category extends Model
     protected $fillable = [
         'name'
     ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function posts(){
+        return $this->hasMany(Post::class);
+    }
+
 }
